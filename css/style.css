@@ -1,0 +1,320 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    --background-color-message: #222e35;
+    --background-color-header: #202c33;
+    --background-color-header-right: #111b21;
+    --color-text: #aebac1;
+    --color-text-white: #e9edef;
+    --color-text-darkwhite: #8696a0;
+    --color-text-link: #53bdeb;
+    --color-green: #00a884;
+    --weight-normal: 400;
+}
+
+body {
+    font-family: 'Segoe UI', Helvetica, sans-serif;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 30% auto;
+    width: 100%;
+    height: 100%;
+}
+
+.left {
+    background: var(--background-color-header-right);
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    background: var(--background-color-header);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-picture .picture {
+    border-radius: 100%;
+    overflow: hidden;
+    background: black;
+    width: 40px;
+    height: 40px;
+}
+
+.icons {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+}
+
+.icons a {
+    color: var(--color-text);
+}
+
+.header-under .search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    gap: 10px;
+}
+
+.search-input-div {
+    position: relative;
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.header-under .search .search-input-div input {
+    width: 100%;
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background: #202c33;
+    color: var(--color-text);
+    padding-left: 45px;
+    padding-right: 45px;
+}
+
+.header-under .search .search-input-div span {
+    position: absolute;
+    color: var(--color-text);
+    padding-left: 15px;
+    font-size: 14px;
+}
+
+.header-under .search a {
+    font-size: 20px;
+    color: var(--color-text);
+}
+
+.header-under .search .search-input-div span.arrow-back {
+    color: var(--color-green);
+    visibility: hidden;
+}
+
+.users {
+    overflow: auto;
+    position: absolute;
+    width: 100%;
+    height: 82%;
+}
+
+.users::-webkit-scrollbar {
+    width: 7px;
+}
+
+.users::-webkit-scrollbar-track {
+    background: none;
+}
+
+.users::-webkit-scrollbar-thumb {
+    background: #2e3a42;
+}
+
+.user a {
+    position: relative;
+}
+
+.user a .user-hr {
+    width: 80%;
+    height: 1px;
+    background: #202c33;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border: none;
+}
+
+.user-end a .user-hr {
+    visibility: hidden;
+}
+
+.user-infos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 10px 20px;
+    transition: 0.4s;
+}
+
+.user-picture {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.user-info {
+    display: flex;
+    justify-content: space-between;
+    flex: auto;
+}
+
+.user-info-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    position: relative;
+}
+
+.hidden-text {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.user-info-left h4 {
+    font-size: 17px;
+    font-weight: var(--weight-normal);
+    color: var(--color-text-white);
+}
+
+.user-info-left div {
+    font-size: 14px;
+    font-weight: var(--weight-normal);
+    color: var(--color-text-darkwhite);
+}
+
+.user-info-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.user-info-right p {
+    font-size: 12px;
+    font-weight: var(--weight-normal);
+    color: var(--color-text-darkwhite);
+}
+
+.user-info-right .fa-angle-down {
+    font-size: 20px;
+    color: var(--color-text-darkwhite);
+    visibility: hidden;
+    /* transition: 0.4s; */
+}
+
+.user a:hover .user-info-right .fa-angle-down {
+    visibility: visible;
+}
+
+.user a:hover .user-infos {
+    background: #202c33;
+}
+
+.user-under {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.user-under-hr {
+    width: 90%;
+    height: 1px;
+    border: none;
+    background: #202c33;
+}
+
+.user-under h5 {
+    font-size: 12px;
+    text-align: center;
+    padding: 10px 0;
+    color: var(--color-text);
+    font-weight: normal;
+}
+
+.user-under h5 a {
+    color: var(--color-text-link);
+}
+
+.right {
+    background: var(--background-color-message);
+    border-left: 1px solid #2e3a42;
+}
+
+.none-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+.none-message-top {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: auto;
+    justify-content: space-around;
+}
+
+.none-message-top .image-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: auto;
+    justify-content: flex-end;
+    gap: 50px;
+}
+
+.none-message-top .image img {
+    width: 40%;
+    margin-bottom: -40px;
+}
+
+.none-message-top .text h5 {
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--color-text);
+    margin-bottom: 15px;
+}
+
+.none-message-top .text p {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--color-text-darkwhite);
+}
+
+.none-message-top .lock-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    gap: 10px;
+    color: var(--color-text-darkwhite);
+    flex: auto;
+}
+
+.none-message-top .lock-icons span {
+    font-size: 10px;
+}
+
+.none-message-bottom {
+    height: 5px;
+    width: 100%;
+    background: #008069;
+}
