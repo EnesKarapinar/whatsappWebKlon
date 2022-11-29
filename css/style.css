@@ -418,7 +418,6 @@ main {
 }
 
 .left-active {
-    /* display: block; */
     left: 0%;
 }
 
