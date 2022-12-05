@@ -102,6 +102,21 @@ $(".left #community-back").click(function() {
     $(".left .left-users").addClass("left-active")
 })
 
+// Yeni sohbet ac
+$(".left #new-chat-link").click(function() {
+    counter2 = 0
+    $(".icons .dropdown-menu").css("display", "none")
+    $(".icons #dropdown-menu-link").css("background", "transparent")
+    $(".left .left-users").removeClass("left-active")
+    $(".left .left-new-chat").addClass("left-active")
+})
+
+// Yeni sohbet kapat
+$(".left #new-chat-back").click(function() {
+    $(".left .left-new-chat").removeClass("left-active")
+    $(".left .left-users").addClass("left-active")
+})
+
 // Eklenti ac-kapat
 $(".footer-icons #addition-link").click(function() {
     counter++
@@ -143,4 +158,23 @@ $(".header-icons #dropdown-menu-link").click(function() {
         $(".header-icons .dropdown-menu").css("display", "none")
         $(".header-icons #dropdown-menu-link").css("background", "transparent")
     }
+})
+
+// Uctan uca sifreleme ac
+$(".user-under #end-to-end-pass-link").click(function() {
+    $(".end-to-end-pass").css("visibility", "visible")
+    $(".end-to-end-pass .container").css("transform", "scale(1)")
+        // $(".end-to-end-pass").css("transform", "scale(1)")
+    $(".end-to-end-pass").fadeIn(100)
+})
+
+// Uctan uca sifreleme kapat
+$(".end-to-end-pass #end-to-end-pass-back").click(function() {
+    $(".end-to-end-pass .container").css("transform", "scale(0)")
+        // $(".end-to-end-pass").css("visibility", "hidden").delay(400)
+        // $(".end-to-end-pass").delay(4000).css("visibility", "hidden")
+        // $(".end-to-end-pass").css("visibility", "hidden")
+
+    $(".end-to-end-pass").delay(400).fadeOut(100)
+        // $(".end-to-end-pass").css("transform", "scale(0)")
 })
